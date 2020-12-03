@@ -22,7 +22,15 @@ public class BrowserPage {
 	@FindBy(how = How.ID, using = "searchform")
 		public WebElement searchBar;
 
-	 @FindBy(how = How.NAME, using = "btnK")
-		public WebElement searchButton;
+	 @FindBy(how = How.XPATH, using = "//iframe[@title= 'recaptcha challenge']")
+		public WebElement recaptcha;
 	
+	 @FindBy(how = How.XPATH , using = "//input[@id= 'login-input']")
+	 public WebElement username;
+	 
+	 @FindBy(how = How.XPATH , using = "//input[@type = 'password']")
+	 public WebElement password;
+	 
+	 @FindBy(how = How.ID , using = "login-submit-button")
+	 public WebElement loginBtn;
 }

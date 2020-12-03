@@ -1,13 +1,14 @@
-@test
-Feature: Google site
-  
-  #Test run for jenkins
- 
-  @launchBrowser
-  Scenario: Verify if user is able to launch the site
-    Given user is  on launches the browser
-    When user enters "https://www.google.com"
-    Then 200 OK is displayed 
+@launchBrowser
+Feature: Login feature
+  As a user I want to login
 
-    
+  Scenario Outline: Verify user if logged in
+    Given user enters "https://accounts.ocado.com/auth-service/sso/login"
+    When user enters username <username>
+    When user enters password <password>
+    Then the user <see> error 
+		Examples:
+   | username | password | see |
+   #| "test" | "test" | "false" |
+   | "ananceki@gmail.com" | "Password" | "true" |
     

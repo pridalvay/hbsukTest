@@ -68,4 +68,8 @@ public class WebDriverUtility {
 	    public void scrollByPage() {
 	    	js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	    }
+	    
+	    public void sendKeys(WebElement element, String text) {
+	    	element.sendKeys(text);
+	    }
 }
